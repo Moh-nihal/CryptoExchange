@@ -1,5 +1,6 @@
 [build]
   base = "package"
+  publish = "package/.next"
   command = "npm run build"
 
 [[plugins]]
