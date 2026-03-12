@@ -1,5 +1,4 @@
 'use client'
-import Image from 'next/image'
 import { portfolioData } from '@/app/api/data'
 import { motion } from 'framer-motion'
 

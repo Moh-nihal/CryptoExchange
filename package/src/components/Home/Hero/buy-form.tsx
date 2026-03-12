@@ -125,8 +125,8 @@ const BuyCrypto = () => {
           <p>Total Cost: </p>
           <p>${totalCost}</p>
         </div>
-        <button className='text-darkmode font-medium text-18 bg-primary w-full border border-primary rounded-lg py-3 hover:text-primary hover:bg-transparent'>
-          Buy
+        <button disabled={loading} className='text-darkmode font-medium text-18 bg-primary w-full border border-primary rounded-lg py-3 hover:text-primary hover:bg-transparent disabled:opacity-70'>
+          {loading ? 'Processing...' : 'Buy'}
         </button>
       </form>
     </div>

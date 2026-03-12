@@ -9,7 +9,7 @@ const MagicLink = () => {
   const [email, setEmail] = useState("");
   const [loader, setLoader] = useState(false);
 
-  const handleSubmit = (e: any) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     if (!email) {
@@ -58,7 +58,7 @@ const MagicLink = () => {
           type="submit"
           className="flex w-full cursor-pointer items-center justify-center rounded-md border border-primary bg-[#102C46] px-5 py-3 text-base text-white transition duration-300 ease-in-out hover:bg-[#102C46]"
         >
-          Send Magic Link 
+          Send Magic Link {loader && <Loader />}
         </button>
       </div>
     </form>

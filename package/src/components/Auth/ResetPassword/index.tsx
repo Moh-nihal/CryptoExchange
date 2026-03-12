@@ -32,8 +32,8 @@ const ResetPassword = ({ token }: { token: string }) => {
             email: res.data.email,
           })
         }
-      } catch (error: any) {
-        toast.error(error?.response?.data)
+      } catch (error: unknown) {
+        toast.error((error as { response?: { data?: string } })?.response?.data ?? 'An error occurred')
         router.push('/forgot-password')
       }
     }
@@ -71,8 +71,8 @@ const ResetPassword = ({ token }: { token: string }) => {
       }
 
       setLoader(false)
-    } catch (error: any) {
-      toast.error(error.response.data)
+    } catch (error: unknown) {
+      toast.error((error as { response?: { data?: string } })?.response?.data ?? 'An error occurred')
       setLoader(false)
     }
   }
